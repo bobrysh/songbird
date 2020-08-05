@@ -6,9 +6,15 @@ import Quiz from '../Quiz';
 import Answers from '../Answers';
 import Details from '../Details';
 import Button from '../Button';
+import Score from '../Score';
 import './App.scss';
 
 export default class App extends Component {
+
+  state = {
+    score: 0,
+  };
+
   render() {
     return (
       <>
@@ -18,7 +24,7 @@ export default class App extends Component {
               <Logo />
             </Col>
             <Col className="score">
-              15
+              <Score score={this.state.score}/>
             </Col>
           </Row>
         </Container>
