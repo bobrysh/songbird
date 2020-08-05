@@ -14,6 +14,8 @@ export default class App extends Component {
   state = {
     score: 0,
     section: 0,
+    win: false,
+    endGame: false,
   };
 
   render() {
@@ -31,14 +33,20 @@ export default class App extends Component {
         </Container>
         <Container className="mainContainer">
           <Row>
-            <Navigation />
+            <Navigation section={this.state.section}/>
           </Row>
           <Row>
-            <Quiz />
+            <Quiz
+              section={this.state.section}
+              win={this.state.win}
+            />
           </Row>
           <Row>
             <Col>
-              <Answers />
+              <Answers
+                section={this.state.section}
+                selectAnswer={this.selectAnswer}
+              />
             </Col>
             <Col>
               <Details />

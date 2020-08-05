@@ -22,7 +22,7 @@ export default class Navigation extends Component {
           <Col className="section">Воробьиные</Col>
           <Col className="section">Лесные птицы</Col>
           <Col className="section">Певчие птицы</Col>
-          <Col className="section">Хищьные птицы</Col>
+          <Col className="section">Хищные птицы</Col>
           <Col className="section">Морские птицы</Col>
         </Row>
       </Container>
