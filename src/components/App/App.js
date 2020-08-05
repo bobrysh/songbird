@@ -13,6 +13,7 @@ export default class App extends Component {
 
   state = {
     score: 0,
+    section: 0,
   };
 
   render() {

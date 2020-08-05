@@ -1,7 +1,26 @@
-.navbar{
-  background-color: green;
+.navbar {
+  width: 100%;
   border-radius: 5px;
-  .active{
-    background-color: red;
+  margin: 0;
+  padding: 0;
+  background: #008966;
+  cursor: pointer;
+
+  .section {
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    min-height: 40px;
+    transition: 300ms;
+    @media (max-width: 340px) {
+      font-size: 0.8rem;
+    }
+    &:hover{
+      background: #008920;
+    }
   }
+}
+
+:root .active {
+  background: lighten(#008966, 15%);
 }
