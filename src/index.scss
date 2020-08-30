@@ -6,4 +6,30 @@ body {
   background: #222222;
 }
 
+#root {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: gray;
+}
+
+.secondary {
+  @media (min-width: 991px) {
+    display: none;
+  }
+}
+
+.centered {
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+
 

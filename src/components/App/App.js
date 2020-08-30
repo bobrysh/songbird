@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import { Col, Row, Container } from 'react-bootstrap';
+import React, {Component} from 'react';
 import Logo from '../Logo';
-import Navigation from '../Navigation';
-import Quiz from '../Quiz';
-import Answers from '../Answers';
-import Details from '../Bird/Details';
-import Button from '../Button';
 import Score from '../Score';
+import AnswerList from '../AnswerList';
+import Details from '../Bird/Details';
+import Button from '../generic/Button';
+import NavBar from '../Navbar';
+import Quiz from '../Quiz';
+import logo from '../../assets/logo.svg';
 import EndGame from '../EndGame';
 import fail from '../../assets/sounds/fail.mp3';
 import success from '../../assets/sounds/success.mp3';
+import { Col, Container, Row} from 'react-bootstrap';
 import './App.scss';
+
 
 export default class App extends Component {
 
@@ -23,7 +25,6 @@ export default class App extends Component {
     attempt: 0,
     win: false,
     endGame: false,
-    isMuteOn: false,
   };
 
   componentDidMount() {
@@ -53,12 +54,12 @@ export default class App extends Component {
     this.fail = new Audio(fail);
     this.success = new Audio(success);
     if (id - 1 !== this.state.randomID || this.state.win) {
-      if (!this.state.isMuteOn && !this.state.win) this.fail.play();
+      if (!this.state.win) this.fail.play();
       return;
     }
     document.querySelectorAll('audio').forEach((item) => {
       item.pause();
-      if (!this.state.isMuteOn && !this.state.win) this.success.play();
+      if (!this.state.win) this.success.play();
     });
     this.setState((state) => ({
       score: state.score + 5 - this.state.attempt,
@@ -133,23 +134,23 @@ export default class App extends Component {
       />
     );
     const btnLabel = this.state.section === 5 ? 'Закончить игру' : 'Следующий' +
-    ' вопрос';
+      ' вопрос';
     const end = this.state.endGame ? endGameComp : null;
     return (
       <>
-        <Container className="headerContainer">
-          <Row>
-            <Col className="logo">
-              <Logo />
+        <Container>
+          <Row className="text-center mb-2">
+            <Col className="d-flex justify-content-start logo">
+              <Logo src={logo}/>
             </Col>
-            <Col className="score">
+            <Col className="d-flex justify-content-end align-items-center text-right score" >
               <Score score={this.state.score}/>
             </Col>
           </Row>
         </Container>
-        <Container className="mainContainer">
-          <Row>
-            <Navigation section={this.state.section}/>
+        <Container className="content">
+          <Row className="mb-2">
+            <NavBar section={this.state.section}/>
           </Row>
           <Row>
             <Quiz
@@ -158,12 +159,14 @@ export default class App extends Component {
               win={this.state.win}
             />
           </Row>
-          <Row>
+          <hr/>
+          <Row className="mb-2">
             <Col>
-              <Answers
+              <AnswerList
                 section={this.state.section}
                 selectAnswer={this.selectAnswer}
               />
+              <hr className="secondary"/>
             </Col>
             <Col>
               <Details
@@ -174,10 +177,20 @@ export default class App extends Component {
             </Col>
           </Row>
           <Row>
-            <Button />
+            <Button
+              label={btnLabel}
+              win={this.state.win}
+              action={this.nextLevel}
+              reset={this.styleAnswer}
+              selected={this.state.selected}
+              endGame={this.state.endGame}
+              section={this.state.section}
+            />
           </Row>
         </Container>
+        {end}
       </>
-    );
+    )
   }
 }
+

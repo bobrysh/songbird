@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './Navigation.scss';
+import './Navbar.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default class Navigation extends Component {
+
+export default class NavBar extends Component {
   componentDidUpdate() {
     const sections = document.querySelectorAll('.section');
     const { section } = this.props;
@@ -18,8 +19,8 @@ export default class Navigation extends Component {
     return (
       <Container>
         <Row className="navbar">
-          <Col className="active section"> Разминка</Col>
-          <Col className="section">Воробьиные</Col>
+          <Col className="section active">Разминка</Col>
+          <Col className="section">Воробьи</Col>
           <Col className="section">Лесные птицы</Col>
           <Col className="section">Певчие птицы</Col>
           <Col className="section">Хищные птицы</Col>

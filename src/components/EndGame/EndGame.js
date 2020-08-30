@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import './EndGame.scss';
-import Button from '../Button';
+import Button from '../generic/Button';
 
 export default class EndGame extends Component {
   render() {
     const { endGame, score, action } = this.props;
     let winner = '';
     if (score === 30) {
-      winner = 'Отличная работа!';
+      winner = 'Congratz !!!';
     } else if (score < 30 && score > 6) {
-      winner = `Победа, вы набрали ${score} очков из 30! 💪`;
+      winner = `Good job: ${score} points`;
     } else if (score < 7) {
-      winner = `Ничего страшного, ваш результат : ${score} очков из 30 \n😕`;
+      winner = `Try again: ${score} points \n😕`;
     }
     const Btn = (
       <Button
-        label="Начать новую игру"
+        label="Restart"
         endGame={endGame}
         action={action}
       />
     );
-    const btn = endGame ? Btn : null;
     const elem = endGame ? winner : null;
+    const btn = endGame ? Btn : null;
 
     return (
       <div className="end-game">

@@ -1,7 +1,5 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
-import './Answers.scss';
+import './AnswerList.scss';
 import birdsData from '../../data/birds-data';
 
 const AnswerList = ({ section, selectAnswer }) => {

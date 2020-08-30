@@ -1,6 +1,7 @@
 import React from 'react';
 import './Button.scss';
 
+
 const Button = ({
   win, label, action, endGame,
 }) => {
@@ -15,7 +16,7 @@ const Button = ({
   }
 
   return (
-    <button className={btnStyle} type="button" disabled={disable} onClick={action}>
+    <button className={btnStyle} disabled={disable} type="button" onClick={action}>
       {label}
     </button>
   );

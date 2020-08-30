@@ -19,21 +19,22 @@ const Details = ({ selected, id, section }) => {
       className="instruction"
       style={styleTip}
     >
-      <span>Послушайте плеер.</span>
-      <span>Выберите птицу из списка</span>
+      <span>Listen songs.</span>
+      <br />
+      <span>Choose birds.</span>
     </p>
   );
 
   const elem = (
     <Container>
       <Row>
-        <Col>
+        <Col lg={4} md={4}>
           <Image
             image={birdsData[section][id].image}
             alt={birdsData[section][id].name}
           />
         </Col>
-        <Col>
+        <Col lg={8} md={8}>
           <Title title={birdsData[section][id].name} />
           <Subtitle subtitle={birdsData[section][id].species} />
           <Audio src={birdsData[section][id].audio} />
