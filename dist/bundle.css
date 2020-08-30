@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap&subset=cyrillic);
+.score{font-size:1.3rem;padding-right:10px;padding-bottom:5px;-webkit-animation:scoreAnimate .3s linear;animation:scoreAnimate .3s linear}@media only screen and (max-width:480px){.score{font-size:1.3rem}}
+.answer-list{width:100%;margin:0;padding:0;background:#222;grid-area:list}.answer-item{font-size:1.2rem;align-self:center;padding:10px;list-style-type:none;cursor:pointer;transition:.15s;border-radius:10px;background:#222}.answer-item:hover,.radioBtn{background:#484848}.radioBtn{line-height:10px;display:inline-block;width:10px;height:10px;margin-right:15px;border-radius:50%}.correct{background:#0f0}.incorrect{background:red}.reset{background:#484848}@media only screen and (max-width:480px){.radioBtn{width:15px;height:15px}}
+.title{font-size:1.5rem}@media only screen and (max-width:480px){.title{font-size:2rem}}
+@media only screen and (max-width:480px){.subtitle{font-size:1.7rem}}
+.bird-img{position:relative;overflow:hidden;width:200px;height:155px;margin:10px 20px 10px 0;border-radius:15px;-o-object-fit:cover;object-fit:cover}.bird-img img{position:relative;top:50%;transform:translateY(-50%) scale(1.2)}
+@media only screen and (max-width:480px){.description{font-size:1.2rem}}
+@media only screen and (max-width:480px){.instruction{font-size:1rem}}
+body{font-family:Nunito,sans-serif;color:#fff;background:#222}#root{position:relative;box-sizing:border-box;margin:0 auto;padding:5px}hr{border:none;height:2px;background:grey}@media(min-width:991px){.secondary{display:none}}@media(max-width:768px){.centered{justify-content:center}}
+.button{font-size:.9375rem;line-height:1.5;width:100%;height:40px;padding:.375rem .75rem;cursor:pointer;transition:.15s;color:#fff;border:1px solid transparent;border-radius:.25rem;background-color:#008966;grid-area:btn}.button:hover{background-color:#00bc8c}.button:active,.button:focus{outline:none}.button.disabled{cursor:not-allowed;background-color:#303030}@media only screen and (max-width:480px){.button{font-size:1.3rem;height:50px}}
+.navbar{width:100%;margin:0;padding:0;border-radius:5px;background:#008966}.navbar .section{line-height:40px;min-height:40px;transition:.3s;text-align:center;border-radius:5px}:root .active{background:#00d69f}@media(max-width:340px){.navbar .section{font-size:.8rem}}
+.end-game{font-size:2rem;line-height:5rem;z-index:99;display:block;width:100%;height:100%;margin-top:100px;text-align:center;grid-area:main}
+@media(max-width:768px){.logo{justify-content:center!important}.muteOn{justify-content:flex-start!important}}

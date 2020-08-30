@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
 
-const Logo = () => (
+const Logo = ({ src }) => (
   <div className="logo">
-    <img src={logo} alt="logotype" width="200px" />
+    <img src={src} alt="App Logo" width="200px" />
   </div>
 );
 
